@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <title>输入密码</title>
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="static/css/css2.css" rel="stylesheet">
+    <!-- Icon Fonts -->
+    <link href="static/css/icon.css" rel="stylesheet">
+    <link href="static/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="static/css/animate.min.css" rel="stylesheet">
+    <!-- Off Canvas Menu - Default Theme -->
+    <link href="static/css/hc-offcanvas-nav.css" rel="stylesheet">
+    <!-- Off Canvas Menu - Carbon Theme -->
+    <!-- <link href="assets/css/vendor/hc-offcanvas-nav.css" rel="stylesheet" /> -->
+
+    <!-- Particle Theme CSS -->
+    <link href="static/css/particle-theme.css" rel="stylesheet">
+    <link href="static/css/particle-colors.css" rel="stylesheet">
+
+    <!-- Theme Preview Only CSS -->
+    <link href="static/css/theme-preview-color-styler.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="static/js/jquery.min.js"></script>
+
+</head>
+
+<body class="pa-homepage pa-dark">
+
+<!-- Page Transitions
+================================================== -->
+<div class="pa-page-transition pa-page-transition-1 is-active"></div>
+<div class="pa-overlay"
+     style="position: fixed; top: 0; left: 0; z-index: 10002; width: 100vw; height: 100vh; pointer-events: none; background: #091019;"></div>
+
+
+<!-- Hero Section
+================================================== -->
+<section id="top" class="pa-hero pa-centered-section pa-full-height pa-image-back pushable-content bg-transparent">
+
+    <div class="pa-youtube-container">
+        <div class="pa-pattern-overlay" style="opacity: 37%;"></div>
+        <div class="pa-absolute-fill pa-gradient-back-v1" style="opacity: 0;"></div>
+        <div id="pa-yt-video-background" class="youtube-video mute" data-youtube-video-id="EP_GjzLq4WY"></div>
+    </div>
+    <div id="particles-js"></div>
+
+    <div class="container pa-hero-content text-center position-relative">
+        <div class="row pa-hero-typed-text">
+            <div class="col-12">
+                <div class="typed-text mega-typed">
+						<span class="animated-text-effect">
+							<!-- <span class="typed-cursor">|</span> -->
+						</span>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="app">
+            <div class="col-12" style="max-width: 976px; margin: 0 auto;">
+                <h2 class="pa-h2-v2-hero-subhead pa-white">输入 <strong>密码</strong> 后才可用哦</h2>
+                <div class="form-group">
+                    <label>密码</label>
+                  
+                  <input type="password"  class="form-control" id="inputUsername" placeholder="password" v-model="password"  @keyup.enter="go">
+                    <button type="submit" class="pa-button-primary pa-hvr-sweep-to-right" @click="go">走你</button>
+                    
+                </div>
+            </div>
+            <button @click="test"> 测试</button>
+        </div>
+    </div>
+
+</section>
+<!-- /.pa-hero -->
+
+
+<section id="skills" class="pa-skills">
+
+    <div class="container">
+        <!-- Section Header -->
+        <div class="row">
+            <div class="col-12 col-xl-10 offset-xl-1 text-center">
+                <h5 class="pa-h1-v3 pa-bright pt-4 pb-1 mb-4 fadeInDelay03Duration10">我宣布 <strong>JS</strong> 是世界上最好的语言
+                </h5>
+            </div>
+        </div>
+
+        <div class="row pa-skills-row">
+            <div class="col-12">
+                <div class="pa-skill-warp">
+
+                    <div class="pa-skill-area pa-skill-el">
+                        <div class="pa-skill-bar progressBar" style="width: 75%;"></div>
+                    </div>
+                    <!-- <p class="pa-skill-number pa-skill-el"><span class="pa-counterskills">75</span><span class="fadeInDelay10Duration10">%</span></p> -->
+                </div>
+                <div class="pa-skill-warp">
+
+                    <div class="pa-skill-area pa-skill-el">
+                        <div class="pa-skill-bar progressBar" style="width: 80%;"></div>
+                    </div>
+                    <!-- <p class="pa-skill-number pa-skill-el"><span class="pa-counterskills">80</span><span class="fadeInDelay10Duration10">%</span></p> -->
+                </div>
+                <div class="pa-skill-warp">
+
+                    <div class="pa-skill-area pa-skill-el">
+                        <div class="pa-skill-bar progressBar" style="width: 50%;"></div>
+                    </div>
+                    <!-- <p class="pa-skill-number pa-skill-el"><span class="pa-counterskills">50</span><span class="fadeInDelay10Duration10">%</span></p> -->
+                </div>
+                <div class="pa-skill-warp">
+
+                    <div class="pa-skill-area pa-skill-el">
+                        <div class="pa-skill-bar progressBar" style="width: 70%;"></div>
+                    </div>
+                    <!-- <p class="pa-skill-number pa-skill-el"><span class="pa-counterskills">70</span><span class="fadeInDelay10Duration10">%</span></p> -->
+                </div>
+                <div class="pa-skill-warp">
+                    <!-- <p class="pa-skill-name pa-skill-el">HTML / CSS / JAVASCRIPT</p>     这里可以写字 -->
+                    <div class="pa-skill-area pa-skill-el">
+                        <div class="pa-skill-bar progressBar" style="width: 60%;"></div>
+                    </div>
+                    <!-- <p class="pa-skill-number pa-skill-el"><span class="pa-counterskills">60</span><span class="fadeInDelay10Duration10">%</span></p> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-- /.pa-skills -->
+
+
+<!-- Scripts / Body End
+================================================== -->
+<!-- Vendor Scripts -->
+<script src="static/js/jquery-migrate.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/hc-offcanvas-nav.js"></script>
+<script src="static/js/parallax.min.js"></script>
+<script src="static/js/jquery.easing.min.js"></script>
+<script src="static/js/typed.min.js"></script>
+<script src="static/js/wow.min.js"></script>
+<script src="static/js/particles.min.js"></script>
+<script src="static/js/waypoints.min.js"></script>
+<script src="static/js/jquery.counterup.min.js"></script>
+
+
+<!-- Theme Scripts and Inits -->
+<script src="static/js/particle-theme.js"></script>
+<script src="static/js/youtube-video.js"></script>
+
+<script src="static/js/page-home-dark.js">
+
+    //这个就是那个打字效果的js
+</script>
+
+<!-- Theme Preview Only Scripts -->
+<script src="static/js/spectrum.min.js"></script>
+<script src="static/js/clipboard.min.js"></script>
+<script src="static/js/theme-preview-only.js"></script>
+
+<!-- Theme Preview Only CSS -->
+<link href="static/css/spectrum.min.css" rel="stylesheet">
+
+<script src="static/js/vue.js"></script>
+<script src="static/js/axios.js"></script>
+<script src="static/js/Qs-min.js"></script>
+<script>
+    Vue.createApp({//创建一个实例
+        data() {//数据都写在这里
+            return {
+                password: null
+
+            }
+
+        },
+        onload: {},
+
+        methods: {//所有函数都写在这里
+
+            go() {
+
+                console.log(this.password)
+
+                if (this.password == "") {
+                    alert("没输密码，休得进入")
+
+                } else {
+                    var data = {
+                        password: this.password
+                    }
+                  axios.post('/login',Qs.stringify(data)).then(res=>{
+                    	           // console.log(res.data);
+
+                    	if(res.data=="ok"){
+                            window.location.replace("./FileTransport.html")
+
+                    	}else if(res.data=="error"){
+
+                    		alert("密码错误")
+                    	}else{
+                            alert("登录失败，好像有故障")
+
+                        }
+
+                    }).catch(err=>{
+                    	console.log(err);
+                    })
+
+
+
+                    // var  data={
+                    //
+                    // 	password:this.password
+                    //
+                    // }
+                    //
+                    //
+                    // axios.post('http://localhost/login',Qs.stringify(data)).then(res=>{
+                    // 	console.log(res.data);
+                    //
+                    // 	if(res.data!="error"){
+                    // 		localStorage.setItem("token", res.data);
+                    // 		// window.location.replace("./FileTransport.html")
+                    //
+                    // 	}else{
+                    //
+                    // 		alert("密码错误")
+                    // 	}
+                    //
+                    // }).catch(err=>{
+                    // 	console.log(err);
+                    // })
+                    //
+                    //
+
+
+//验证密码
+
+                }
+
+
+            },
+            test(){
+                alert("test")
+            }
+
+
+        },
+        /**
+         v-on:click绑定事件
+
+
+         **/
+
+
+    }).mount("#app")//页面的id写啥#后面就是啥mount绑定容器id
+
+
+</script>
+
+
+</body>
+
+</html>

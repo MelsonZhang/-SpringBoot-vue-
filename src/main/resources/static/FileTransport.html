@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Web UI Kit &amp; Dashboard Template based on Bootstrap">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords" content="adminkit, bootstrap, web ui kit, dashboard template, admin template">
+
+	<link rel="shortcut icon" href="static/img/icons/icon-48x48.png" />
+
+	<title>文件传输</title>
+
+	<link href="static/css/app.css" rel="stylesheet">
+</head>
+
+<body id="app">
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand" href="index.html">
+          <span class="align-middle">By Melson</span>
+        </a>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						Pages
+					</li>
+
+					
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="FileTransport.html">
+              <i class="align-middle" data-feather="book"></i> <span class="align-middle">文件传输</span>
+            </a>
+					</li>
+
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="Messages.html">
+							<svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.5 37H21L11 42V37H4V7H44V18" stroke="#cacac2" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel"/><rect x="30" y="27" width="14" height="8" fill="#cacac2" stroke="#cacac2" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel"/><path d="M40 27V24C40 22.3431 38.6569 21 37 21C35.3431 21 34 22.3431 34 24V27" stroke="#cacac2" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel"/><path d="M12 15H15L18 15" stroke="#cacac2" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel"/><path d="M12 21H18L24 21" stroke="#cacac2" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel"/></svg>
+							 <span class="align-middle">悄悄话</span>
+            </a>
+					</li>
+
+
+
+
+
+
+
+
+
+				</ul>
+
+				<div class="sidebar-cta">
+					<div class="sidebar-cta-content">
+						<strong class="d-inline-block mb-2">Upgrade to Pro</strong>
+						<div class="mb-3 text-sm">
+							Are you looking for more components?
+						</div>
+						<a href="#" target="_blank" class="btn btn-outline-primary btn-block">刷新</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle d-flex">
+          <i class="hamburger align-self-center"></i>
+        </a>
+
+				<form class="form-inline d-none d-sm-inline-block">
+					<div class="input-group input-group-navbar">
+						<input type="text" class="form-control" placeholder="搜搜看…" aria-label="Search" >
+						<div class="input-group-append">
+							<button class="btn" type="button">
+                <i class="align-middle" data-feather="search"></i>
+              </button>
+						</div>
+					</div>
+				</form>
+
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-toggle="dropdown">
+								<div class="position-relative">
+									<i class="align-middle" data-feather="bell"></i>
+									<span class="indicator">0</span>
+								</div>
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="alertsDropdown">
+								<div class="dropdown-menu-header">
+									看啥，啥都没有
+								</div>
+								<div class="list-group">
+										<div class="row no-gutters align-items-center">
+											<div class="col-2">
+											</div>
+											
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-toggle="dropdown">
+								<div class="position-relative">
+									<i class="align-middle" data-feather="message-square"></i>
+								</div>
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="messagesDropdown">
+								<div class="dropdown-menu-header">
+									<div class="position-relative">
+										0 New Messages
+									</div>
+								</div>
+								<div class="list-group">
+								</div>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">功能还没写，先欠着</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown">
+                <i class="align-middle" data-feather="settings"></i>
+              </a>
+
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
+         
+                <img src="static/img/icons/_computer.png" class="avatar img-fluid rounded mr-1" v-if="!isMobel"/>
+				<img src="static/img/icons/mobel_devices.png" class="avatar img-fluid rounded mr-1" v-if="isMobel"/>
+				
+				<span class="text-dark">IP:{{ip}}</span>
+              </a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="/loginout">退出登录</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<h1 class="h3 mb-3">传文件</h1>
+					<div id="drop-area" :class="dropActive ? 'drop-active' : ''">
+						<p><br/>
+							<input type="file" @change="fileChoose($event)"  class="form-control"  style="left:-9999px;position:absolute;">
+							<input type="file" id="file"@change="fileChoose($event)" style="position: absolute; top: 8; left: 8; opacity: 0"/>
+							<button class="btn mb-1 btn-facebook" ><i class="align-middle mr-2" data-feather="share"></i>上传</button>
+							
+							<br/>将文件拖拽到此处也可完成文件上传。</p>
+
+							
+					</div>
+				
+					<div class="mb-2"  v-show="loading"  style="text-align:center;">
+						<div class="spinner-grow text-dark mr-2" role="status">
+							<span class="sr-only">Loading...</span>
+						</div>
+						<div class="spinner-grow text-primary mr-2" role="status">
+							<span class="sr-only">Loading...</span>
+						</div>
+						<div class="spinner-grow text-secondary mr-2" role="status">
+							<span class="sr-only">Loading...</span>
+						</div>
+						<div class="spinner-grow text-success mr-2" role="status">
+							<span class="sr-only">Loading...</span>
+						</div>
+						<div class="spinner-grow text-danger mr-2" role="status">
+							<span class="sr-only">Loading...</span>
+						</div>
+						<div class="spinner-grow text-warning mr-2" role="status">
+							<span class="sr-only">Loading...</span>
+						</div>
+						<div class="spinner-grow text-info mr-2" role="status">
+							<span class="sr-only">Loading...</span>
+						</div>
+					</div>
+
+
+
+
+					<div class="row">
+						<div class="col-12">
+							<div class="card">
+								<div class="card-header">
+
+								
+						
+												<table class="table table-hover my-0">
+													<thead>
+														<tr>
+															<th>文件名</th>
+															<th class="d-none d-xl-table-cell">上传时间</th>
+															<th class="d-none d-xl-table-cell">大小</th>
+															<th class="d-none d-md-table-cell">操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr v-for="(item, index) in fileList"   @click="downLoad(index)">
+															<td>
+																	<i class="align-middle mr-2" data-feather="file"></i> <span class="align-middle"></span>
+												
+																{{item.fileName}}</td>
+
+
+															<td class="d-none d-xl-table-cell">{{item.fileTime}}</td>
+
+															<td class="d-none d-xl-table-cell">{{item.fileSize}}</td>
+															<td class="d-none d-md-table-cell">
+																<button class="btn btn-success"  @click="downLoad(index)" >
+																	<i class="align-middle mr-2" data-feather="download"></i> <span class="align-middle">下载</span>
+
+																</button>
+															
+															</td>
+														</tr>
+														
+													</tbody>
+												</table>
+										
+												
+
+
+
+
+
+								
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</main>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-left">
+							<p class="mb-0">
+								<a href="#" class="text-muted"><strong>Melson Demo</strong></a> &copy;
+							</p>
+						</div>
+						<div class="col-6 text-right">
+						
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+	<script src="static/js/vendor.js"></script>
+	<script src="static/js/app.js"></script>
+	<script src="static/js/vue.js"></script>
+	<script src="static/js/axios.js"></script>
+	<script src="static/js/Qs-min.js"></script>
+
+	<script>
+		Vue.createApp({//创建一个实例
+			data() {//数据都写在这里
+				return {
+				ip:"未知IP",
+				isMobel:false,
+				dropActive:false,
+				loading:false,
+				file:null,
+				fileList:null
+	
+				}
+	
+			},
+			created() {
+
+            this.ip=window.localStorage.getItem("ipAddress")
+			if(this.ip==null || this.ip==""){
+				  if(returnCitySN["cip"]!=null&&returnCitySN["cip"]!=""){//获取IP地址
+                 window.localStorage.setItem("ipAddress",returnCitySN["cip"])
+	             this.ip=returnCitySN["cip"]
+		
+			}
+			}
+
+			
+if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
+ 
+ //alert(navigator.userAgent); 
+  
+isMobel=true
+  
+ } else if (/(Android)/i.test(navigator.userAgent)) { 
+  
+ //alert(navigator.userAgent); 
+  
+ isMobel=true
+  
+ } else { 
+  
+	isMobel=false
+
+ };
+ axios.post('./getFile').then(res=>{
+   
+	this.fileList=res.data
+	console.log(fileList);
+}).catch(err=>{
+    console.log(err);
+})
+			
+			},
+	
+			methods: {//所有函数都写在这里
+	
+				dropEvent(e) {
+      this.dropActive = false
+      e.stopPropagation()
+      e.preventDefault()
+      this.uploadFile(e.dataTransfer.files)
+    },
+    uploadFile (file) {
+		let file1 = new FormData();
+		console.log("拖动")
+		// 渲染上传文件
+      console.log(file[0], 'file')
+      file1.append("file",file[0]);
+      if (file && file.length) {
+        //自行发挥，存本地或上传服务器
+		axios.post('./upload',
+            file1,
+                {headers: {'Content-Type': 'multipart/form-data'}}
+            ).then((res)=>{
+            console.log(res)
+            }).catch((res)=>{
+            console.log("fail")
+            })
+
+
+
+
+
+      }
+    }, 
+	fileChoose(event){
+            this.file = event.target.files[0];    
+			console.log("选择")
+            console.log(event)
+			this.submit()
+        },
+
+
+        submit(){
+			this.loading=true
+            let file = new FormData();
+            file.append("file", this.file);
+            axios.post('./upload',
+                file ,
+                {headers: {'Content-Type': 'multipart/form-data'}}
+            ).then((res)=>{
+            console.log(res)
+		       this.loading=false
+				alert("上传成功")
+			location.reload()
+
+            }).catch((res)=>{
+			
+            })
+        },
+
+
+		changeFile(el) {
+      const files = el.files;
+       console.log('上传的文件：', files);
+    },
+	downLoad(index){
+
+// 		console.log(index)
+// 		console.log(this.fileList[index])
+
+// 		axios.get('./download'+'?fileName='+ this.fileList[index].fileName).then(res=>{
+//     console.log(res);
+// }).catch(err=>{
+//     console.log(err);
+// })
+host = window.location.host
+console.log("当前URL",host) 
+window.location.href ="/download?fileName="+this.fileList[index].fileName;
+
+
+	}
+	
+			}
+			,
+  mounted () {
+    let dropArea = document.getElementById('drop-area')
+    dropArea.addEventListener('drop', this.dropEvent, false)
+    dropArea.addEventListener('dragleave', (e) => {
+      e.stopPropagation()
+      e.preventDefault()
+      this.dropActive = false
+    })
+    dropArea.addEventListener('dragenter', (e) => {
+      e.stopPropagation()
+      e.preventDefault()
+      this.dropActive = true
+    })
+    dropArea.addEventListener('dragover', (e) => {
+      e.stopPropagation()
+      e.preventDefault()
+      this.dropActive = true
+    })
+  }
+
+	
+		}).mount("#app")//页面的id写啥#后面就是啥mount绑定容器id
+	
+	
+	</script>
+
+<style scoped lang="less">
+	#drop-area {
+	  height: 80px;
+	  color: rgba(0, 0, 0, 0.45);
+	  text-align: center;
+	  background-color: #fafafa;
+	  border: 1px dashed #d9d9d9;
+
+	}
+	.drop-active{
+	background-color: rgba(231,234,246,0.8);
+  }
+  </style>
+
+</body>
+
+</html>

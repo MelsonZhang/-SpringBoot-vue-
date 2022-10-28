@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="static/img/icons/icon-48x48.png" />
+
+    <title>消息</title>
+
+    <link href="static/css/app.css" rel="stylesheet">
+</head>
+
+<body id="app">
+<div class="wrapper">
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-content js-simplebar">
+            <a class="sidebar-brand" href="index.html">
+                <span class="align-middle">By Melson</span>
+            </a>
+
+            <ul class="sidebar-nav">
+                <li class="sidebar-header">
+                    Pages
+                </li>
+
+
+                <li class="sidebar-item active">
+                    <a class="sidebar-link" href="FileTransport.html">
+                        <i class="align-middle" data-feather="book"></i> <span class="align-middle">文件传输</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item active">
+                    <a class="sidebar-link" href="FileTransport.html">
+                        <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.5 37H21L11 42V37H4V7H44V18" stroke="#cacac2" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel"/><rect x="30" y="27" width="14" height="8" fill="#cacac2" stroke="#cacac2" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel"/><path d="M40 27V24C40 22.3431 38.6569 21 37 21C35.3431 21 34 22.3431 34 24V27" stroke="#cacac2" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel"/><path d="M12 15H15L18 15" stroke="#cacac2" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel"/><path d="M12 21H18L24 21" stroke="#cacac2" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel"/></svg>
+                        <span class="align-middle">悄悄话</span>
+                    </a>
+                </li>
+
+
+
+
+
+
+
+
+
+            </ul>
+
+            <div class="sidebar-cta">
+                <div class="sidebar-cta-content">
+                    <strong class="d-inline-block mb-2"></strong>
+                    <div class="mb-3 text-sm">
+                        Are you looking for more components?
+                    </div>
+                    <a href="#" target="_blank" class="btn btn-outline-primary btn-block">刷新</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main">
+        <nav class="navbar navbar-expand navbar-light navbar-bg">
+            <a class="sidebar-toggle d-flex">
+                <i class="hamburger align-self-center"></i>
+            </a>
+
+            <form class="form-inline d-none d-sm-inline-block">
+                <div class="input-group input-group-navbar">
+                    <input type="text" class="form-control" placeholder="搜搜看…" aria-label="Search" >
+                    <div class="input-group-append">
+                        <button class="btn" type="button">
+                            <i class="align-middle" data-feather="search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="navbar-collapse collapse">
+                <ul class="navbar-nav navbar-align">
+                    <li class="nav-item dropdown">
+                        <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-toggle="dropdown">
+                            <div class="position-relative">
+                                <i class="align-middle" data-feather="bell"></i>
+                                <span class="indicator">0</span>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="alertsDropdown">
+                            <div class="dropdown-menu-header">
+                                看啥，啥都没有
+                            </div>
+                            <div class="list-group">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col-2">
+                                    </div>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-toggle="dropdown">
+                            <div class="position-relative">
+                                <i class="align-middle" data-feather="message-square"></i>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="messagesDropdown">
+                            <div class="dropdown-menu-header">
+                                <div class="position-relative">
+                                    0 New Messages
+                                </div>
+                            </div>
+                            <div class="list-group">
+                            </div>
+                            <div class="dropdown-menu-footer">
+                                <a href="#" class="text-muted">功能还没写，先欠着</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown">
+                            <i class="align-middle" data-feather="settings"></i>
+                        </a>
+
+                        <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
+
+                            <img src="static/img/icons/_computer.png" class="avatar img-fluid rounded mr-1" v-if="!isMobel"/>
+                            <img src="static/img/icons/mobel_devices.png" class="avatar img-fluid rounded mr-1" v-if="isMobel"/>
+
+                            <span class="text-dark">IP:{{ip}}</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/loginout">退出登录</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="content">
+            <div class="container-fluid p-0">
+
+             
+
+
+                <div class="col-md-8 col-xl-9">
+                    <div class="card">
+                        <div class="card-header">
+
+                            <h5 class="card-title mb-0">消息列表</h5>
+                        </div>
+                        <div class="card-body h-100">
+
+
+                            <hr />
+                            <div class="media">
+                                <div class="media-body">
+                                    <strong>发送消息</strong>
+                                    <div class="border text-sm text-muted p-2 mt-1">
+                                        <textarea class="form-control" rows="2" placeholder="输入想要发送的内容" v-model="messageSendText"></textarea>
+                                    </div>
+
+                                   <button class="btn btn-success"   @click="sendMessage()"><i class="align-middle mr-2" data-feather="send"></i> 发送</button>
+                                   &nbsp;   &nbsp;   &nbsp;   &nbsp;
+                                   <button class="btn btn-danger"   @click="clearMessages()"><i class="align-middle mr-2" data-feather="delete"></i> 清空消息</button>
+                                </div>
+                            </div>
+
+ <div  v-for="(item, index) in   messagesReviced" :key="index">
+ <hr />
+ <div class="media">
+     <img src="./assets/images/contact-hero.jpg" width="36" height="36" class="rounded-circle mr-2" alt="Christina Mason">
+     <div class="media-body">
+         <small class="float-right text-navy">{{item.time}}</small>
+         <strong>来自IP &nbsp; {{item.userIP}}  &nbsp; 的消息: <br /></strong>{{item.message}} <br />
+
+         <small class="text-muted"></small>
+     </div>
+ </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row text-muted">
+                    <div class="col-6 text-left">
+                        <p class="mb-0">
+                            <a href="#" class="text-muted"><strong>Melson Demo</strong></a> &copy;
+                        </p>
+                    </div>
+                    <div class="col-6 text-right">
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script src="static/js/vendor.js"></script>
+<script src="static/js/app.js"></script>
+<script src="static/js/vue.js"></script>
+<script src="static/js/axios.js"></script>
+<script src="static/js/Qs-min.js"></script>
+
+<script>
+    Vue.createApp({//创建一个实例
+        data() {//数据都写在这里
+            return {
+                ip:"未知IP",
+                isMobel:false,
+                dropActive:false,
+                loading:false,
+                websock:null,
+                messageSendText:null,
+                messagesReviced:null
+
+            }
+
+        },
+        mounted() {
+    this.connectWebsocket();
+    // console.log("storage结果",window.localStorage.getItem("ipAddress"))
+    this.setIpAddress();
+   // var host = window.location.host;
+   // var host2=document.domain;
+   // console.log("host1",host)
+   // console.log("host2",host2)
+  },
+  methods: {
+    connectWebsocket() {
+      let websocket;
+      if (typeof WebSocket === "undefined") {
+        console.log("您的浏览器不支持WebSocket");
+        return;
+      } else {
+       var host = window.location.host;
+       var url = 'ws://'+host+'/websocket/'+this.ip;
+
+        // 打开一个websocket
+        websocket = new WebSocket(url);
+        this.websock=websocket
+        // 建立连接
+        websocket.onopen = () => {
+          // 发送数据
+        //   websocket.send("我是前端vue中发来的消息");
+        //   console.log("websocket发送数据中");
+        };
+        // 客户端接收服务端返回的数据
+        websocket.onmessage = evt => {
+        //   console.log("websocket返回的数据：", evt);
+        this.getMessages()
+        };
+        // 发生错误时
+        websocket.onerror = evt => {
+          console.log("websocket错误：", evt);
+        };
+        // 关闭连接
+        websocket.onclose = evt => {
+        //   console.log("websocket关闭：", evt);
+        alert("连接断开，请刷新页面")
+        };
+      }
+
+      this.getMessages()
+    },
+
+    sendMessage(){
+        // console.log(this.messageSendText)
+        var newDate=new Date()
+        var data={"user":this.ip,
+                   "time":newDate.toGMTString(),
+                  "message":this.messageSendText
+
+        }
+        try{
+            this.websock.send(JSON.stringify(data))
+        this.messageSendText=null
+        alert("发送成功")
+        }catch{
+            alert("发送失败")
+        }
+        
+        axios.post('./SendMessage',Qs.stringify(data)).then(res=>{
+                      //Qs需要引入cdn依赖
+                    this. getMessages()
+
+}).catch(err=>{
+    console.log(err);
+})
+        
+        //console.log("发送了消息",data)
+    },
+
+    getMessages(){
+        var that=this
+        axios.get('./getMessages').then(res=>{
+                                                //Qs需要引入cdn依赖
+    console.log(res);
+    var result=res.data
+    var data=[]
+    for (let i = 0; i < result.length; i++){
+         var out=result[i]
+         data.push(JSON.parse(out))
+    }
+    // console.log( JSON.parse(out) )
+    this.messagesReviced=data
+    console.log(data)
+}).catch(err=>{
+    console.log(err);
+})
+
+    },
+
+    setIpAddress(){
+
+        this.ip=window.localStorage.getItem("ipAddress")
+			if(this.ip==null || this.ip==""){
+				  if(returnCitySN["cip"]!=null&&returnCitySN["cip"]!=""){//获取IP地址
+                 window.localStorage.setItem("ipAddress",returnCitySN["cip"])
+	             this.ip=returnCitySN["cip"]
+		
+			}
+    }
+
+  },
+
+clearMessages(){
+    var that=this
+        axios.get('./clearMessages').then(res=>{
+               this.messagesReviced=null                         
+}).catch(err=>{
+    console.log(err);
+})
+}
+
+    }
+    
+}).mount("#app")//页面的id写啥#后面就是啥mount绑定容器id
+
+
+</script>
+
+<style>
+</style>
+
+</body>
+
+</html>

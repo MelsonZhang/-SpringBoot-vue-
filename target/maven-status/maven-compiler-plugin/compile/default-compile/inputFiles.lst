@@ -1,0 +1,14 @@
+/root/Melson/WEB/Files/src/main/java/com/melson/files/config/LoginConfiguration.java
+/root/Melson/WEB/Files/src/main/java/com/melson/files/controller/FileController.java
+/root/Melson/WEB/Files/src/main/java/com/melson/files/config/WebSocketConfig.java
+/root/Melson/WEB/Files/src/main/java/com/melson/files/controller/MessageController.java
+/root/Melson/WEB/Files/src/main/java/com/melson/files/config/MyWebConfigurer.java
+/root/Melson/WEB/Files/src/main/java/com/melson/files/Utils/RedisCacheUtil.java
+/root/Melson/WEB/Files/src/main/java/com/melson/files/service/CacheService.java
+/root/Melson/WEB/Files/src/main/java/com/melson/files/FilesApplication.java
+/root/Melson/WEB/Files/src/main/java/com/melson/files/Bean/Message.java
+/root/Melson/WEB/Files/src/main/java/com/melson/files/controller/Redirct.java
+/root/Melson/WEB/Files/src/main/java/com/melson/files/Bean/Audience.java
+/root/Melson/WEB/Files/src/main/java/com/melson/files/Bean/FileClass.java
+/root/Melson/WEB/Files/src/main/java/com/melson/files/controller/WebSocket.java
+/root/Melson/WEB/Files/src/main/java/com/melson/files/Utils/LoginInterceptor.java
